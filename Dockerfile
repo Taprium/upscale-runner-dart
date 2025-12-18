@@ -7,7 +7,8 @@ WORKDIR /src
 
 COPY . .
 
-RUN dart pub get && dart compile exe bin/taprium_upscale_runner.dart -o bin/app
+RUN dart pub get 
+RUN dart compile exe bin/taprium_upscale_runner.dart -o bin/app
 
 # download models
 RUN wget https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-ubuntu.zip && \
