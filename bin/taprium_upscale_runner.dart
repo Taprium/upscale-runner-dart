@@ -5,7 +5,7 @@ import 'package:taprium_upscale_runner/taprium_pb.dart';
 import 'package:taprium_upscale_runner/upscale.dart';
 
 void main(List<String> arguments) async {
-  final file = File('/var/lock/run.lock');
+  final file = File('/var/lock/upscale.lock');
   RandomAccessFile raf = await file.open(mode: FileMode.write);
 
   try {

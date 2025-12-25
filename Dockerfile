@@ -41,7 +41,7 @@ RUN apk update && \
     apk search -eq 'mesa-vulkan-*' | grep -v 'layers' | xargs apk add --no-cache &&\
     rm -rf /var/cache/apk/*
 
-COPY crontab.txt *.py *.sh ./
+COPY crontab.txt *.sh ./
 COPY --from=prep /src/bin/taprium-upscale-runner ./
 COPY --from=prep /realesrgan/realesrgan-ncnn-vulkan ./
 COPY --from=prep /realesrgan/models/* ./models/
