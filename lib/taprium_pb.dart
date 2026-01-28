@@ -28,6 +28,9 @@ Future trySignIn() async {
   if (EnvironmentService.tapriumAddr == '') {
     throw Exception("[TAPRIUIM_ADDR] was not set");
   }
+  if (EnvironmentService.tapriumSecret == '') {
+    throw Exception("[TAPRIUM_AUTH_SECRET] was not set");
+  }
   final pocketbase = PocketBase(EnvironmentService.tapriumAddr);
   GetIt.instance.registerSingleton(pocketbase);
 
