@@ -40,7 +40,10 @@ FROM alpine:latest
 WORKDIR /app
 
 RUN apk update && \
-    apk add --no-cache vulkan-loader libgomp libgcc icu-libs icu-dev && \
+    apk add --no-cache \
+    --repository https://dl-cdn.alpinelinux.org/alpine/edge/main \
+    --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing \ 
+    vulkan-loader libgomp libgcc icu-libs && \
     apk search -eq 'mesa-vulkan-*' | grep -v 'layers' | xargs apk add --no-cache &&\
     rm -rf /var/cache/apk/*
 
