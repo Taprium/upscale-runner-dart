@@ -25,7 +25,7 @@ RUN if [ "$TARGETARCH" == "amd64" ]; then \
 # Compile dart code
 WORKDIR /src
 
-RUN apk add --no-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing dart-sdk
+RUN apk update && apk add --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing dart-sdk
 COPY . .
 
 RUN touch .env && \
